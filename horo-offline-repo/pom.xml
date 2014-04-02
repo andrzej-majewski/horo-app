@@ -68,7 +68,7 @@
       <plugin>
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>features-maven-plugin</artifactId>
-        <version>2.2.1</version>
+        <version>2.3.3</version>
 
         <executions>
           <execution>
@@ -89,14 +89,18 @@
                 <descriptor>mvn:org.fusesource.fabric/fuse-fabric/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.jboss.fuse/jboss-fuse/6.0.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.patch/patch-features/7.2.0.redhat-024/xml/features</descriptor>
-                <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.examples/fabric-cxf-demo-features/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.examples/fabric-camel-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.examples/fabric-activemq-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:io.hawt/hawtio-karaf/1.0/xml/features</descriptor>
+                <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor>
+
+
+<!--                <descriptor>file:${project.basedir}/../horo-features/src/main/features/features.xml</descriptor>
+-->
               </descriptors>
               <features>
-                <!-- <feature>rtt</feature> <feature>rtt-next-bridge</feature> <feature>rtt-audit</feature> -->
+                <feature>horo-model</feature> 
               </features>
               <repository>target/offline-repo</repository>
             </configuration>
@@ -106,7 +110,7 @@
           <dependency>
             <groupId>com.fusesource.examples</groupId>
             <artifactId>horo-features</artifactId>
-            <version>${project.version}</version>
+            <version>${pom.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
           </dependency>
