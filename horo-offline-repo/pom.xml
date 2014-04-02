@@ -155,4 +155,14 @@
     </plugins>
   </build>
 
+  <dependencies>
+    <dependency>
+      <groupId>com.fusesource.examples</groupId>
+      <artifactId>horo-features</artifactId>
+      <version>${project.version}</version>
+      <type>xml</type>
+      <classifier>features</classifier>
+    </dependency>
+  </dependencies>
+
 </project>
