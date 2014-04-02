@@ -35,7 +35,15 @@
         <module>horo-rss-reader</module>
         <module>horo-web</module>
         <module>horo-features</module>
+	    <module>horo-offline-repo</module>
     </modules>
+
+  <scm>
+    <connection>scm:git:git@github.com:andrzej-majewski/horo-app.git</connection>
+    <developerConnection>scm:git:git@github.com:andrzej-majewski/horo-app.git</developerConnection>
+    <url>https://github.com/andrzej-majewski/horo-app.git</url>
+  </scm>
+
 
     <properties>
         <application-name>Horoscope aggregator app</application-name>
