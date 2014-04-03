@@ -92,50 +92,13 @@
                 <descriptor>mvn:org.fusesource.examples/fabric-camel-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.examples/fabric-activemq-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:io.hawt/hawtio-karaf/1.0/xml/features</descriptor>
-                <!-- <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor> -->
-                <descriptor>file:${project.basedir}/../horo-features/target/features/features.xml</descriptor>
-
+                <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor>
+                
               </descriptors>
               <features>
                 <feature>horo-model</feature>
               </features>
               <repository>target/offline-repo</repository>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.8</version>
-        <executions>
-          <execution>
-            <id>copy</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>com.fusesource.examples</groupId>
-                  <artifactId>horo-features</artifactId>
-                  <version>${pom.version}</version>
-                  <type>xml</type>
-                  <classifier>features</classifier>
-	              <outputDirectory>target/offline-repo/com/fusesource/examples/horo-features/${pom.version}</outputDirectory>
-                </artifactItem>
-                <artifactItem>
-			      <groupId>org.fusesource.fabric</groupId>
-			      <artifactId>fuse-fabric</artifactId>
-			      <version>7.2.0.redhat-024</version>
-			       <type>zip</type>
-	              <outputDirectory>target/offline-repo/org/fusesource/fabric/fuse-fabric/7.2.0.redhat-024</outputDirectory>
-                </artifactItem>
-
-              </artifactItems>
-              <excludeTransitive>true</excludeTransitive>
-              <outputDirectory>target/offline-repo</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -182,4 +145,13 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+  	<dependency>
+      <groupId>com.fusesource.examples</groupId>
+      <artifactId>horo-features</artifactId>
+      <version>${pom.version}</version>
+      <type>xml</type>
+      <classifier>features</classifier>
+	</dependency>
+  </dependencies>
 </project>
