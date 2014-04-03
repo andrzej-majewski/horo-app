@@ -110,10 +110,10 @@
         <version>2.8</version>
         <executions>
           <execution>
-            <id>copy-dependencies</id>
+            <id>copy</id>
             <phase>package</phase>
             <goals>
-              <goal>copy-dependencies</goal>
+              <goal>copy</goal>
             </goals>
             <configuration>
               <artifactItems>
@@ -123,10 +123,19 @@
                   <version>${pom.version}</version>
                   <type>xml</type>
                   <classifier>features</classifier>
-                  <overWrite>true</overWrite>
+	              <outputDirectory>target/offline-repo/com/fusesource/examples/horo-features/${pom.version}</outputDirectory>
                 </artifactItem>
+                <artifactItem>
+			      <groupId>org.fusesource.fabric</groupId>
+			      <artifactId>fuse-fabric</artifactId>
+			      <version>7.2.0.redhat-024</version>
+			       <type>zip</type>
+	              <outputDirectory>target/offline-repo/org/fusesource/fabric/fuse-fabric/7.2.0.redhat-024</outputDirectory>
+                </artifactItem>
+
               </artifactItems>
-              <outputDirectory>target/offline-repo/com/fusesource/examples/horo-features/${pom.version}</outputDirectory>
+              <excludeTransitive>true</excludeTransitive>
+              <outputDirectory>target/offline-repo</outputDirectory>
             </configuration>
           </execution>
         </executions>
@@ -173,13 +182,4 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>com.fusesource.examples</groupId>
-      <artifactId>horo-features</artifactId>
-      <version>${project.version}</version>
-      <type>xml</type>
-      <classifier>features</classifier>
-    </dependency>
-  </dependencies>
 </project>
