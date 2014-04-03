@@ -49,7 +49,7 @@
     <repository>
       <id>esb.system.repo</id>
       <name>Red Hat JBoss Fuse internal system repo</name>
-      <url>file:///C:/jboss-fuse-6.0.0.redhat-024/system</url>
+      <url>file:///opt/jboss-fuse-6.0.0.redhat-024/system</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -93,28 +93,50 @@
                 <descriptor>mvn:org.fusesource.examples/fabric-camel-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:org.fusesource.examples/fabric-activemq-demo/7.2.0.redhat-024/xml/features</descriptor>
                 <descriptor>mvn:io.hawt/hawtio-karaf/1.0/xml/features</descriptor>
-                <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor>
+<!--                 <descriptor>mvn:com.fusesource.examples/horo-features/${pom.version}/xml/features</descriptor>
+                
 
-
-<!--                <descriptor>file:${project.basedir}/../horo-features/src/main/features/features.xml</descriptor>
+               <descriptor>file:${project.basedir}/../horo-features/src/main/features/features.xml</descriptor>
 -->
               </descriptors>
               <features>
-                <feature>horo-model</feature> 
+
               </features>
               <repository>target/offline-repo</repository>
             </configuration>
           </execution>
         </executions>
-        <dependencies>
-          <dependency>
-            <groupId>com.fusesource.examples</groupId>
-            <artifactId>horo-features</artifactId>
-            <version>${pom.version}</version>
-            <type>xml</type>
-            <classifier>features</classifier>
-          </dependency>
-        </dependencies>
+      </plugin>
+       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+
+            <configuration>
+                <artifactItems>
+                <artifactItem>
+
+            			<groupId>com.fusesource.examples</groupId>
+			            <artifactId>horo-features</artifactId>
+            			<version>${pom.version}</version>
+			            <type>xml</type>
+                        <classifier>features</classifier>
+
+                  <overWrite>true</overWrite>
+                </artifactItem>
+              </artifactItems>
+			  <outputDirectory>target/offline-repo/com/fusesource/examples/horo-features/${pom.version}</outputDirectory>
+                
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -159,5 +181,13 @@
 
     </plugins>
   </build>
-
+        <dependencies>
+<dependency>
+            <groupId>com.fusesource.examples</groupId>
+            <artifactId>horo-features</artifactId>
+            <version>${project.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        </dependencies>
 </project>
