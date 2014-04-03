@@ -20,12 +20,12 @@
     <parent>
         <groupId>com.fusesource.examples</groupId>
         <artifactId>camel-bundle-parent</artifactId>
-        <version>1.2</version>
+        <version>1.3-SNAPSHOT</version>
         <relativePath>../camel-bundle-parent</relativePath>
     </parent>
 
     <artifactId>horo-db</artifactId>
-    <version>1.2</version>
+    <version>1.3-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <name>${application-name} :: ${project.artifactId}</name>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>com.fusesource.examples</groupId>
             <artifactId>horo-model</artifactId>
-            <version>1.2</version>
+            <version>1.3-SNAPSHOT</version>
         </dependency>
 
         <dependency>
