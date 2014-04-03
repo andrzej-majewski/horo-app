@@ -8,6 +8,8 @@
   <fileSets>
     <fileSet>
       <directory>target/offline-repo</directory>
+      <outputDirectory>/offline-repo</outputDirectory>
     </fileSet>
   </fileSets>
+
 </assembly>
