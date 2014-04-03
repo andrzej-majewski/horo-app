@@ -22,7 +22,7 @@
     <groupId>com.fusesource.examples</groupId>
     <artifactId>horo-app</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.1</version>
 
     <name>${application-name}</name>
 
