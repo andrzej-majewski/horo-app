@@ -20,11 +20,11 @@
     <parent>
         <groupId>com.fusesource.examples</groupId>
         <artifactId>horo-app</artifactId>
-        <version>1.2-SNAPSHOT</version>
+        <version>1.2</version>
     </parent>
 
     <artifactId>bundle-parent</artifactId>
-    <version>1.2-SNAPSHOT</version>
+    <version>1.2</version>
     <packaging>pom</packaging>
 
     <properties>
