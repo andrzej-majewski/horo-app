@@ -20,12 +20,12 @@
     <parent>
         <groupId>com.fusesource.examples</groupId>
         <artifactId>bundle-parent</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
         <relativePath>../bundle-parent</relativePath>
     </parent>
 
     <artifactId>camel-bundle-parent</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <dependencies>
