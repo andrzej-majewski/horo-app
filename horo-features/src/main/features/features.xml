@@ -15,24 +15,24 @@
   ~ limitations under the License.
   -->
 
-<features name="horo-features-1.0-SNAPSHOT">
+<features name="horo-features-${project.version}">
 
 
-    <feature name="horo-model" version="1.0-SNAPSHOT">
-        <bundle>mvn:com.fusesource.examples/horo-model/1.0-SNAPSHOT</bundle>
+    <feature name="horo-model" version="${project.version}">
+        <bundle>mvn:com.fusesource.examples/horo-model/${project.version}</bundle>
         <bundle>mvn:joda-time/joda-time/${joda-time-version}</bundle>
         <bundle>mvn:commons-lang/commons-lang/${commons-lang-version}</bundle>
     </feature>
 
-    <feature name="horo-db" version="1.0-SNAPSHOT">
-        <feature version="1.0-SNAPSHOT">horo-model</feature>
+    <feature name="horo-db" version="${project.version}">
+        <feature version="${project.version}">horo-model</feature>
         <feature version="${camel-version}">camel-mybatis</feature>
         <bundle>wrap:mvn:postgresql/postgresql/${postgresql-version}</bundle>
         <!--
         <bundle>wrap:mvn:commons-dbcp/commons-dbcp/${commons-dbcp-version}</bundle>
         -->
         <bundle>wrap:mvn:c3p0/c3p0/${c3p0-version}</bundle>
-        <bundle>mvn:com.fusesource.examples/horo-db/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.fusesource.examples/horo-db/${project.version}</bundle>
         <bundle>mvn:org.mybatis/mybatis/${mybatis-version}</bundle>
         <bundle>mvn:org.mybatis/mybatis-spring/${mybatis-spring-version}</bundle>
         <bundle>mvn:org.springframework/spring-jdbc/${spring-version}</bundle>
@@ -40,28 +40,28 @@
         <bundle>mvn:org.springframework.batch/spring-batch-infrastructure/${spring-batch-version}</bundle>
     </feature>
 
-    <feature name="horo-rss-reader" version="1.0-SNAPSHOT">
+    <feature name="horo-rss-reader" version="${project.version}">
         <feature version="${camel-version}">camel-tagsoup</feature>
         <feature version="${camel-version}">camel-jetty</feature>
         <feature version="${camel-version}">camel-xstream</feature>
         <feature version="${camel-version}">camel-rss</feature>
         <feature version="${camel-version}">camel-sql</feature>
-        <feature version="1.0-SNAPSHOT">horo-model</feature>
+        <feature version="${project.version}">horo-model</feature>
         <bundle>mvn:org.springframework/spring-jdbc/${spring-version}</bundle>
-        <bundle>mvn:com.fusesource.examples/horo-rss-reader/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.fusesource.examples/horo-rss-reader/${project.version}</bundle>
     </feature>
 
-    <feature name="horo-web" version="1.0-SNAPSHOT">
+    <feature name="horo-web" version="${project.version}">
         <feature version="${cxf-version}">cxf</feature>
-        <feature version="1.0-SNAPSHOT">horo-model</feature>
-        <bundle>mvn:com.fusesource.examples/horo-web/1.0-SNAPSHOT</bundle>
+        <feature version="${project.version}">horo-model</feature>
+        <bundle>mvn:com.fusesource.examples/horo-web/${project.version}</bundle>
     </feature>
 
-    <feature name="horo-all" version="1.0-SNAPSHOT">
-        <feature version="1.0-SNAPSHOT">horo-model</feature>
-        <feature version="1.0-SNAPSHOT">horo-db</feature>
-        <feature version="1.0-SNAPSHOT">horo-web</feature>
-        <feature version="1.0-SNAPSHOT">horo-rss-reader</feature>
+    <feature name="horo-all" version="${project.version}">
+        <feature version="${project.version}">horo-model</feature>
+        <feature version="${project.version}">horo-db</feature>
+        <feature version="${project.version}">horo-web</feature>
+        <feature version="${project.version}">horo-rss-reader</feature>
     </feature>
 
 </features>
