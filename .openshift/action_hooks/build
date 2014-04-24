@@ -7,4 +7,4 @@ cd ~/app-root/repo/
 mvn clean install -Dmaven.test.skip=true -Duser.home=$OPENSHIFT_DATA_DIR
 cd ~/
 gear start
-
+sleep 10
