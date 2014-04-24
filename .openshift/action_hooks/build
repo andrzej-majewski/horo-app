@@ -4,7 +4,7 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 cd ~/app-root/repo/ 
-mvn clean install -Dmaven.test.skip=true -Duser.home=$OPENSHIFT_DATA_DIR
+#mvn clean install -Dmaven.test.skip=true -Duser.home=$OPENSHIFT_DATA_DIR
 cd ~/
-gear start
+ctl_app start
 sleep 10
