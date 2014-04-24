@@ -34,7 +34,6 @@
         <module>horo-rss-reader</module>
         <module>horo-web</module>
         <module>horo-features</module>
-	    <module>horo-offline-repo</module>
     </modules>
 
   <scm>
